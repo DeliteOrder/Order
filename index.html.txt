@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="orderForm">
+        <h2>Order Form</h2>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required>
+
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="tel" id="mobileNumber" required>
+
+        <label for="orderType">Order Type:</label>
+        <select id="orderType" required>
+            <option value="product1">Product 1</option>
+            <option value="product2">Product 2</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <label for="paymentDuration">Payment Duration:</label>
+        <select id="paymentDuration" required>
+            <option value="30">30 days</option>
+            <option value="60">60 days</option>
+        </select>
+
+        <label for="shippingType">Shipping Type:</label>
+        <select id="shippingType" required>
+            <option value="standard">Standard</option>
+            <option value="express">Express</option>
+            <option value="cargo">Cargo</option>
+        </select>
+
+        <button type="button" onclick="submitOrder()">Submit Order</button>
+    </form>
+
+    <script>
+        function submitOrder() {
+            // Fetch values from the form
+            const email = document.getElementById('email').value;
+            const fullName = document.getElementById('fullName').value;
+            const mobileNumber = document.getElementById('mobileNumber').value;
+            const orderType = document.getElementById('orderType').value;
+            const paymentDuration = document.getElementById('paymentDuration').value;
+            const shippingType = document.getElementById('shippingType').value;
+
+            // You can send this data to your backend for further processing
+            console.log("Order Details:");
+            console.log("Email:", email);
+            console.log("Full Name:", fullName);
+            console.log("Mobile Number:", mobileNumber);
+            console.log("Order Type:", orderType);
+            console.log("Payment Duration:", paymentDuration, "days");
+            console.log("Shipping Type:", shippingType);
+
+            // Here you can make an AJAX request to your backend to save the order
+            // For simplicity, I'm just logging the data to the console in this example
+        }
+    </script>
+
+</body>
+</html>
